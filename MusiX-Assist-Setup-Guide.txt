@@ -1,0 +1,65 @@
+================================================
+ MUSIX ASSIST v1.2 - SETUP GUIDE (standalone)
+================================================
+
+WHAT THIS APP IS
+- A tiny helper (25 KB) that gives you a floating orb icon
+  and protects MusiX from being killed by the system.
+- It does NOT contain MusiX. Your original MusiX app and
+  all your songs stay exactly where they are.
+
+STEP 0 - CLEAN UP THE OLD BROKEN THINGS (one time)
+1. Uninstall "MusiX Mod" (the copy that closes instantly).
+2. Uninstall "MusiX Assist" if it is still on the phone
+   (the old crashing one). Note: MusiX Mod and the old
+   MusiX Assist are the SAME app - uninstalling removes
+   both icons together.
+   *** DO NOT touch the original green "MusiX" icon ***
+   *** that has all your songs. Keep it. ***
+3. In your file manager / Downloads, DELETE the old file
+   "MusiX-v4.0.5-KeepAlive-Assist-Mod.apk". It is obsolete
+   and can never install - that is why it showed "Update".
+
+STEP 1 - DOWNLOAD
+Open this link in your browser:
+https://github.com/firefox-star/musix-mod/releases/download/v1.2/MusiX-Assist-v1.2.apk
+The file is "MusiX-Assist-v1.2.apk" (about 25 KB).
+
+STEP 2 - INSTALL
+1. Tap the downloaded file -> Install.
+2. If Play Protect shows a warning: tap "More details"
+   then "Install anyway". It only warns because the app
+   is not from the Play Store.
+
+STEP 3 - FIRST RUN (2 minutes, do once)
+Open "MusiX Assist" and do these in order:
+1. "Grant overlay permission" -> find MusiX Assist -> Allow.
+   (This is what makes the floating orb appear.)
+2. "Add to battery whitelist" -> Allow.
+3. "Open original MusiX App Info" -> Battery -> Unrestricted.
+4. "Open Autostart / Background rules" -> enable BOTH
+   "MusiX" and "MusiX Assist" in the list.
+5. Recents screen -> long-press both app cards -> Lock
+   (the padlock).
+6. Reboot the phone once. Done!
+
+HOW TO USE THE FLOATING ORB
+- A small round orb floats on your screen (over any app).
+- DRAG it anywhere you like - the position is remembered.
+- TAP it -> a menu opens with:
+    "Open MusiX"  - opens your original MusiX instantly
+    "Hide orb"    - removes the orb from the screen
+    "Quit Assist" - stops the helper completely
+- Want the orb back later? Open "MusiX Assist" and turn ON
+  "Floating orb icon on screen".
+
+WHAT IF...
+- "MusiX Assist keeps stopping"? It will not happen with
+  v1.2 - the watchdog revives the helper silently, and
+  every risky call is wrapped so it can never throw an
+  error dialog.
+- The orb disappeared? Open "MusiX Assist" once, the orb
+  returns (the watchdog also brings it back on its own).
+- You want to remove everything? Just uninstall
+  "MusiX Assist". Your original MusiX and all songs are
+  never touched by installing or removing this helper.
