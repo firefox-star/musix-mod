@@ -1,0 +1,61 @@
+MusiX Keep-Alive Assist Mod v1.1 - Install & Survival Guide
+============================================================
+Mod identity : MusiX Mod (com.superz.musixmodx) v4.0.5-code 1315
+             -> SEPARATE APP. Installs SIDE-BY-SIDE with your original MusiX.
+             -> Do NOT uninstall anything. Your songs are untouched.
+Mod adds     : Anti-kill watchdog + draggable floating orb + boot auto-start
+Signed with  : musixmod-keystore.jks (alias: musixmod, pass: musixmod2026)
+               KEEP THIS FILE - same key required for future mod updates!
+
+WHAT CHANGED IN v1.1
+--------------------
+- Fixed "app isn't compatible with your phone": removed the Play Store
+  split-APK requirements (requiredSplitTypes + Play stamps) that block
+  standalone installs of extracted base APKs.
+- Rebranded to its own package, so the mod and your original MusiX
+  coexist with no signature conflict.
+- Your downloaded songs live in shared phone storage (e.g. Music/ or
+  the MusiX download folder) - BOTH apps read the same files.
+
+INSTALL (one time)
+------------------
+1. Open MusiX-Mod-v1.1-Standalone.apk -> install. (No uninstalls needed.)
+2. Play Protect may say "unknown app" -> More details -> Install anyway.
+3. Home screen now shows: MusiX (original) + MusiX Mod (protected) +
+   MusiX Assist (the mod's control panel).
+
+FIRST-RUN SETUP (inside "MusiX Assist") - do once, takes 2 minutes
+------------------------------------------------------------------
+1. Grant overlay permission      -> needed for the floating orb
+2. Allow notifications           -> needed for the keep-alive notice
+3. Battery whitelist             -> tap, then choose ALLOW
+4. Autostart settings            -> enable MusiX Mod / Assist autostart
+5. Recents -> long-press "MusiX Mod" card -> LOCK it (padlock icon)
+6. HiOS/Phone Master -> Battery -> turn OFF "Deep optimization" and
+   "Auto-kill background" for MusiX Mod (if your ROM has these)
+7. Reboot once. Done.
+
+HOW THE ANTI-KILL WORKS (4 layers)
+----------------------------------
+L1  Sticky foreground service  -> Android treats the mod as "foreground",
+                                   OEM killers must not touch it.
+L2  Watchdog alarm             -> every 10 min (and ~2s after any kill)
+                                   the system alarm re-launches the service,
+                                   even in Doze deep sleep.
+L3  Boot receiver              -> re-arms everything after every reboot
+                                   and after every app update.
+L4  Battery whitelist          -> removes Doze limits completely.
+
+THE FLOATING ORB
+----------------
+* Drag anywhere, position is remembered.
+* Tap once  -> mini menu: [Open MusiX Mod] [Hide orb] [Quit Assist]
+* "Hide orb" removes the icon from screen but keeps protection ON.
+* "Quit Assist" turns everything off (also available in Assist panel).
+* Toggle it back anytime from the MusiX Assist app.
+
+HONEST LIMITS
+-------------
+No normal app is 100% unkillable - a ROM that force-stops everything can
+still win. But with whitelist + autostart + recents-lock + this watchdog,
+the service returns within seconds of any kill: practically always alive.
