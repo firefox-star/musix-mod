@@ -1,61 +1,104 @@
-MusiX Keep-Alive Assist Mod v1.1 - Install & Survival Guide
-============================================================
-Mod identity : MusiX Mod (com.superz.musixmodx) v4.0.5-code 1315
-             -> SEPARATE APP. Installs SIDE-BY-SIDE with your original MusiX.
-             -> Do NOT uninstall anything. Your songs are untouched.
-Mod adds     : Anti-kill watchdog + draggable floating orb + boot auto-start
-Signed with  : musixmod-keystore.jks (alias: musixmod, pass: musixmod2026)
-               KEEP THIS FILE - same key required for future mod updates!
+================================================================
+ MUSIX MOD v2.0 - SETUP GUIDE (full MusiX copy that RUNS)
+================================================================
 
-WHAT CHANGED IN v1.1
---------------------
-- Fixed "app isn't compatible with your phone": removed the Play Store
-  split-APK requirements (requiredSplitTypes + Play stamps) that block
-  standalone installs of extracted base APKs.
-- Rebranded to its own package, so the mod and your original MusiX
-  coexist with no signature conflict.
-- Your downloaded songs live in shared phone storage (e.g. Music/ or
-  the MusiX download folder) - BOTH apps read the same files.
+WHAT v2.0 IS
+------------
+The COMPLETE MusiX app (v4.0.5, 43 MB) re-signed and rebuilt so it
+actually RUNS - the GBWhatsApp-style approach done properly:
 
-INSTALL (one time)
-------------------
-1. Open MusiX-Mod-v1.1-Standalone.apk -> install. (No uninstalls needed.)
-2. Play Protect may say "unknown app" -> More details -> Install anyway.
-3. Home screen now shows: MusiX (original) + MusiX Mod (protected) +
-   MusiX Assist (the mod's control panel).
+  - Fresh package identity: com.superz.musixmodv2
+    (installs BESIDE your original MusiX - no conflicts, ever)
+  - ONE launcher icon: "MusiX Mod"
+  - Your original MusiX + songs: NEVER touched, never uninstalled
+  - Built-in keep-alive service (anti-kill) + floating orb
+    INSIDE the mod - no second app needed
+  - Hardened assistant code from the v1.2 codebase: watchdog
+    alarm, boot restore, crash-proof start - no "keeps stopping"
+    pop-ups possible from the assistant subsystem
 
-FIRST-RUN SETUP (inside "MusiX Assist") - do once, takes 2 minutes
-------------------------------------------------------------------
-1. Grant overlay permission      -> needed for the floating orb
-2. Allow notifications           -> needed for the keep-alive notice
-3. Battery whitelist             -> tap, then choose ALLOW
-4. Autostart settings            -> enable MusiX Mod / Assist autostart
-5. Recents -> long-press "MusiX Mod" card -> LOCK it (padlock icon)
-6. HiOS/Phone Master -> Battery -> turn OFF "Deep optimization" and
-   "Auto-kill background" for MusiX Mod (if your ROM has these)
-7. Reboot once. Done.
+WHY v1.1 FAILED (so you know this is different)
+-----------------------------------------------
+v1.1 was also a renamed copy, but a crash-killing startup fault in
+the copy's environment closed it instantly with no message. v2.0 is
+a full rebuild with a fresh identity + the self-starting, hardened
+assistant embedded at startup.
 
-HOW THE ANTI-KILL WORKS (4 layers)
-----------------------------------
-L1  Sticky foreground service  -> Android treats the mod as "foreground",
-                                   OEM killers must not touch it.
-L2  Watchdog alarm             -> every 10 min (and ~2s after any kill)
-                                   the system alarm re-launches the service,
-                                   even in Doze deep sleep.
-L3  Boot receiver              -> re-arms everything after every reboot
-                                   and after every app update.
-L4  Battery whitelist          -> removes Doze limits completely.
+----------------------------------------------------------------
+ STEP 0 - CLEANUP (2 minutes, IMPORTANT)
+----------------------------------------------------------------
+1. UNINSTALL the old broken "MusiX Mod" (the one that opened and
+   closed instantly). Its icon disappears. That is normal.
+2. DELETE every old MusiX APK you downloaded before (the Downloads
+   folder: MusiX-Mod-v1.1-Standalone.apk, the very first keep-alive
+   APK, etc.). Old files cause the confusing "Update" button.
+3. DO NOT touch the ORIGINAL MusiX (green icon with your songs).
+   Leave it exactly as it is.
 
-THE FLOATING ORB
-----------------
-* Drag anywhere, position is remembered.
-* Tap once  -> mini menu: [Open MusiX Mod] [Hide orb] [Quit Assist]
-* "Hide orb" removes the icon from screen but keeps protection ON.
-* "Quit Assist" turns everything off (also available in Assist panel).
-* Toggle it back anytime from the MusiX Assist app.
+----------------------------------------------------------------
+ STEP 1 - DOWNLOAD
+----------------------------------------------------------------
+https://github.com/firefox-star/musix-mod/releases/download/v2.0/MusiX-Mod-v2.0.apk
 
-HONEST LIMITS
--------------
-No normal app is 100% unkillable - a ROM that force-stops everything can
-still win. But with whitelist + autostart + recents-lock + this watchdog,
-the service returns within seconds of any kill: practically always alive.
+File: MusiX-Mod-v2.0.apk  (~43 MB)
+SHA-256: 0809e36719bd52f550562be7fbe4dbf8acc5088f179c9eb536fcf7b1ba813059
+
+----------------------------------------------------------------
+ STEP 2 - INSTALL
+----------------------------------------------------------------
+1. Tap the downloaded APK.
+2. If Play Protect warns: tap "More details" -> "Install anyway".
+   (Normal for any re-signed app outside the Play Store.)
+3. Tap Open.
+
+----------------------------------------------------------------
+ STEP 3 - FIRST RUN (the setup panel opens BY ITSELF)
+----------------------------------------------------------------
+On first launch, "MusiX Assist" (the mod's control panel) opens
+automatically on top. Do its checklist once:
+
+ 1. "Grant overlay permission" -> Allow  (this shows the orb)
+ 2. "Add to battery whitelist" -> Allow
+ 3. "Open MusiX App Info" -> Battery -> Unrestricted
+ 4. "Open Autostart / Background rules" -> allow MusiX Mod
+    (and the original MusiX too, if it is listed)
+ 5. Recents screen: long-press both cards -> Lock (padlock)
+ 6. HiOS / Phone Master battery: turn OFF "Deep optimization"
+    and "Auto-kill background"
+ 7. Reboot the phone once.
+
+Then close the panel (back button) and USE MusiX Mod like a normal
+music app: grant audio permission when asked, pick your songs.
+
+----------------------------------------------------------------
+ THE FLOATING ORB
+----------------------------------------------------------------
+- Appears once overlay permission is granted and the app runs.
+- Drag it anywhere; tap it -> Open MusiX / Hide orb / Quit.
+- The orb belongs to MusiX Mod and opens MusiX Mod.
+- If the system ever kills the mod, the watchdog quietly revives
+  it - no error pop-ups, ever.
+
+----------------------------------------------------------------
+ FAQ
+----------------------------------------------------------------
+Q: Will it delete my songs from the original MusiX?
+A: No. Songs live in shared storage. Both apps read the same
+   files. The original app is never modified.
+
+Q: Two MusiX apps on the phone now?
+A: Yes - the green ORIGINAL (untouched, your songs) and "MusiX
+   Mod" v2.0. Different package names, like WhatsApp + GBWhatsApp.
+
+Q: I still see "Update" instead of "Install"?
+A: You opened an OLD downloaded APK file. Delete it and download
+   v2.0 fresh (Step 1 link).
+
+Q: The orb did not appear / I closed the setup panel too early?
+A: Just open (or reopen) MusiX Mod - the setup panel pops up again
+   automatically UNTIL overlay permission is granted. After it is
+   granted the panel stops auto-opening (normal use).
+
+Q: Can I uninstall the original MusiX now?
+A: Your choice - but we recommend keeping it as backup. The mod
+   does not depend on it in any way.
